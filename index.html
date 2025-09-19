@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pentru Iuly, cu dragoste</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Source+Sans+Pro&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color-start: #ff9a9e;
+            --bg-color-end: #fad0c4;
+            --text-color: #333;
+            --header-color: #c72c41;
+            --card-bg: rgba(255, 255, 255, 0.6);
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+            overflow-x: hidden;
+        }
+
+        /* Animația pentru fundalul gradient */
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .container {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            padding: 2rem;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 8px 32px 0 var(--shadow-color);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        /* Animația de apariție pentru container */
+        .container {
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        header h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4rem;
+            color: var(--header-color);
+            margin-bottom: 0.5rem;
+            animation: fadeInDown 1s ease-out 0.5s backwards;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out 0.8s backwards;
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .heart {
+            font-size: 4rem;
+            color: var(--header-color);
+            animation: pulse 1.5s infinite ease-in-out;
+            margin: 2rem 0;
+            display: inline-block;
+        }
+
+        /* Animația de pulsare pentru inimă */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.15); }
+            100% { transform: scale(1); }
+        }
+
+        .content-section {
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out 1.2s backwards;
+        }
+
+        .content-section:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+        }
+
+        .content-section h2 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--header-color);
+            margin-bottom: 1rem;
+        }
+
+        .content-section p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            margin-top: 2rem;
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.8rem;
+            animation: fadeInUp 1s ease-out 1.5s backwards;
+        }
+
+        /* Particule animate în fundal */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: float 25s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(10vw);
+                opacity: 0;
+            }
+        }
+
+        /* Media query pentru ecrane mai mici */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+            .content-section h2 {
+                font-size: 2rem;
+            }
+            .container {
+                padding: 1.5rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="particles"></div>
+
+    <div class="container">
+        <header>
+            <h1>Pentru Iuly</h1>
+            <p>O mică surpriză, creată cu tot dragul din lume.</p>
+        </header>
+
+        <main>
+            <div class="heart">❤</div>
+
+            <section class="content-section">
+                <h2>Un Gând</h2>
+                <p>
+                   Hei, tu! Știi că ai superputerea de a-mi face inima să bată mai repede doar cu un zâmbet? 💖 Mă faci să mă simt cel mai norocos om din lume și sincer… nici nu vreau antidot la vraja ta. Te iubesc nebunie! 😘
+                </p>
+            </section>
+
+            <section class="content-section">
+                <h2>O Dorință</h2>
+                <p>
+                    Dacă aș avea voie să pun o singură dorință, aș cere să te am mereu aproape. Să-ți aud râsul, să-ți simt mâna în a mea și să știu că ești partea cea mai frumoasă din povestea mea. Tu ești dorința mea împlinită. I love u mommy 💫❤️
+                </p>
+            </section>
+        </main>
+
+        <footer>
+            <p>Cu dragoste infinită Mada</p>
+            @copy; 2025. A website designed and developed by Madalin Ignat. All rights reserved.
+        </footer>
+    </div>
+
+    <script>
+        // Script pentru a genera particule animate
+        const particlesContainer = document.querySelector('.particles');
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            const size = Math.random() * 7 + 3; // Dimensiune între 3px și 10px
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            
+            const animationDuration = Math.random() * 20 + 15; // Durata animației între 15s și 35s
+            const animationDelay = Math.random() * 10; // Întârziere
+            particle.style.animation = `float ${animationDuration}s linear ${animationDelay}s infinite`;
+            
+            particlesContainer.appendChild(particle);
+        }
+    </script>
+
+</body>
+</html>
